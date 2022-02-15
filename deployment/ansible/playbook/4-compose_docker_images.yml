@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+
+    - name: start hosting game on server
+      shell:
+        chdir: /home/royce/card_game
+        cmd: docker-compose up -d

@@ -1,0 +1,6 @@
+---
+
+- import_playbook: 1-setup_docker.yml
+- import_playbook: 2-install_docker_compose_and_create_users.yml
+- import_playbook: 3-get_docker_images_from_dockerhub.yml
+- import_playbook: 4-compose_docker_images.yml

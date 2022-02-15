@@ -1,0 +1,10 @@
+---
+- hosts: servers
+  become: true
+
+  tasks:
+    - name: stop hosting game on server
+      shell:
+        chdir: /home/royce/home/royce/card_game
+        cmd: docker-compose down
+

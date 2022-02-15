@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres:12.8-alpine
+    restart: always
+    volumes:
+        - ./app/account.sql:/docker-entrypoint-initdb.d/account.sql
+        - ./postgres_config_listen.conf:/docker-entrypoint-initdb.d/postgres_config_listen.conf
+        - ./postgres/data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: royce
+      POSTGRES_DB: card_game
+      POSTGRES_PASSWORD: password
+
+  game:
+    image: roycehoe/card_game:latest
+    ports:
+      - "80:80"
