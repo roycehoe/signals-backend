@@ -1,44 +1,38 @@
-# Card game
+# Overview
+https://api.fancybinary.sg/
 
-![Codecov](https://img.shields.io/codecov/c/github/roycehoe/card_game?flag=unittest&token=RKQABL23VM) ![Build status](https://github.com/roycehoe/card_game/actions/workflows/merge_to_master.yml/badge.svg)
+RestAPI enpoints for a game of hilo written in Python, built with PostgreSQL and FastAPI.
 
-A suite of card games written in the Python language.
+# Play with my application
+ 1. Download Insomnia [here](https://insomnia.rest/)
+ 2. Open the [insomnia json file](Insomnia_2022-03-14.json) in Insomnia
+ 3. Have fun!
 
-### Features
+# Project Skeleton
+ - Created a Card class to implement Card objects that can be compared to other Card objects based on their suit and value attributes. Implemented  with Pydantic dataclasses
+ - Created a GameState class to to keep track of GameStates; Implemented methods that alters the GameState object based on player decisions; Implemented with Pydantic dataclasses
+ - Implement core game logic by implementing functions that returns altered Gamestate objects
 
-coming soon
 
-### Installation
+# API
+ - Implement a PostgreSQL relational database with SQLAlchemy that stores User authentication details, and the corresponding latest gamestate
+ - Utilize FastAPI to create endpoints for my fronend to perform CRUD functions on my database
+ - Used Pydantic BaseModel to dictate the request and return structure for each API call
 
-coming soon
+# Security, error handling and testing
+![Codecov](https://img.shields.io/codecov/c/github/roycehoe/card_game?flag=unittest&token=RKQABL23VM)
+ - Utilized CryptContext to hash passwords when stored in my database
+ - Implement the creation of a JWT token whenever a user is successfully authenticated
+ - Implement custom Exceptions for all implemented game objecst
+ - Implement custom HTTP response status codes for invalid requests sent to my API endpoint with accompanying custom error codes
+ - Implement unit tests with Pytest for all backend modules
 
-### Instructions
+# Deployment
+ - Utilized Docker and docker-compose to deploy a containerize version of my application
+ - Implement pre-commit hooks to mantain code integrity
+ - Utilize GitHub actions to implement a CI pipeline; push to work branches are automatically rejected should builds fail
+ - Used Terraform to automate creation of Virtual Private Servers on DigitalOcean
+ - Used Ansible, in conjuction with Terraform, to create a Virtual Private server, download project and system dependencies, and deploy a working backend, with a single command
+ - Used Cloudflare to set up a DNS to redirect users from my application domain name to my virtual private server
 
-coming soon
 
-### Contributing
-
-> If I have seen further it is by standing on the shoulders of Giants
->
-> - Sir Isaac Newton
-
-Contributions and bug fixes are always welcome.
-
-### Spin-offs
-
-Currently, this repository only contains the backend logic for a card game of hilo. However, as this project expands, I forsee it branching out to other casino games such as:
-
-- Blackjack
-- Poker
-- Bridge
-- [大弟](https://en.wikipedia.org/wiki/Big_twohttps://en.wikipedia.org/wiki/Big_two) [da di]
-
-Furthermore, as this project grows in scale an size, I dream that it would be able to implement:
-
-- Multiplayer modes
-- Fully functional players written in Python code
-
-### Acknowledgement
-
-- Nik Tay for his unwavering support in guiding the evolution of this project
-- Marcus Cai for his relentless support in my journey of being a better coder
