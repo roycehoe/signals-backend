@@ -3,6 +3,8 @@ https://api.fancybinary.sg/
 
 RestAPI enpoints for a game of hilo written in Python, built with PostgreSQL and FastAPI.
 
+Frontend repo: https://github.com/roycehoe/signals-frontend
+
 # Play with my application
  1. Download Insomnia [here](https://insomnia.rest/)
  2. Open the [insomnia json file](Insomnia_2022-03-14.json) in Insomnia
